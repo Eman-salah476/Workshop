@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+</head>
+
+<body>
+  <h1>{{title}}</h1>
+  <h3>Employee</h3>
+  <hr />
+  <form [formGroup]="employeeForm" (ngSubmit)="save()" #formDir="ngForm" novalidate>
+    <div class="form-group row">
+      <label class=" control-label col-md-12" for="Name">Name</label>
+      <div class="col-md-4"> <input class="form-control" type="text" formControlName="Name"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'Name') && formDir.submitted">
+        Name is required.
+      </span>
+    </div>
+
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Title">Title</label>
+      <div class="col-md-4"> <input class="form-control" type="text" formControlName="Title"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'Title') && formDir.submitted">
+        Title is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Address">Address</label>
+      <div class="col-md-4"> <input class="form-control" type="text" formControlName="Address"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'Address') && formDir.submitted">
+        Address is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Salary">Salary</label>
+      <div class="col-md-4"> <input class="form-control" type="text" formControlName="Salary"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'Salary') && formDir.submitted">
+        Salary is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="Phone">Phone</label>
+      <div class="col-md-4"> <input class="form-control" type="text" formControlName="Phone"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'Phone') && formDir.submitted">
+        Phone is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="HireDate">HireDate</label>
+      <div class="col-md-4"> <input class="form-control" type="date" formControlName="HireDate"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'HireDate') && formDir.submitted">
+        HireDate is required
+      </span>
+    </div>
+    <div class="form-group row">
+      <label class="control-label col-md-12" for="BirthDate">BirthDate</label>
+      <div class="col-md-4"> <input class="form-control" type="date" formControlName="BirthDate"> </div>
+      <span class="text-danger" *ngIf="employeeForm.hasError('required', 'BirthDate') && formDir.submitted">
+        BirthDate is required
+      </span>
+    </div>
+
+    <div class="form-group"> <button type="submit" class="btn btn-primary">Save</button> <button class="btn" (click)="cancel()">Cancel</button> </div>
+  </form>
+</body>
+
+</html>  
